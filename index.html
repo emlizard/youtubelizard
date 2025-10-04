@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💪 맞춤 건강 영상 큐레이션</title>
+    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💪 맞춤 건강 영상 큐레이션</title>
+    
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#3498db">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💪 나만의 맞춤 건강 영상</h1>
+            <p>궁금한 신체 부위나 증상을 입력하고 원하는 검색 조건을 설정해보세요!</p>
+        </header>
+
+        <div class="search-box">
+            <input type="text" id="topic-input" placeholder="예: 허리, 어깨, 불면증, 소화불량">
+            <div class="custom-keyword-box">
+                <input type="text" id="custom-keyword-input" placeholder="추가할 키워드 (예: 요가)">
+                <button id="add-keyword-btn">키워드 추가 +</button>
+            </div>
+            <div id="category-buttons" class="category-buttons">
+                <button data-category="스트레칭">🧘‍♀️ 스트레칭</button>
+                <button data-category="좋은 음식">🥗 좋은 음식</button>
+                <button data-category="운동">🏋️‍♀️ 운동</button>
+            </div>
+        </div>
+        
+        <div class="options-box">
+            <div class="option-item">
+                <label>영상 종류:</label>
+                <div class="radio-group">
+                    <input type="radio" id="type-all" name="video-type" value="" checked>
+                    <label for="type-all">전체</label>
+                    <input type="radio" id="type-shorts" name="video-type" value="쇼츠">
+                    <label for="type-shorts">쇼츠만</label>
+                </div>
+            </div>
+            <div class="option-item">
+                <label for="language-select">언어:</label>
+                <select id="language-select">
+                    <option value="">모든 언어</option>
+                    <option value="ko">한국어</option>
+                    <option value="en">영어</option>
+                    <option value="ja">일본어</option>
+                    <option value="zh-Hans">중국어</option>
+                </select>
+            </div>
+            <div class="option-item">
+                <label for="sort-order">정렬 기준:</label>
+                <select id="sort-order">
+                    <option value="relevance">관련성순</option>
+                    <option value="date">최신순</option>
+                    <option value="viewCount">조회수순</option>
+                </select>
+            </div>
+            <div class="option-item">
+                <label for="results-count">결과 개수:</label>
+                <input type="number" id="results-count" value="12" min="1" max="50">
+            </div>
+        </div>
+
+        <div class="main-content">
+            <main id="video-results" class="video-grid">
+                </main>
+            <aside id="stats-container" class="stats-container">
+                </aside>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
